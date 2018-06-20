@@ -6,5 +6,7 @@ The app scans and html file for img tags and replaces their src attributes with 
 
 On the client it then uses the IntersectionObserver API to determine if the image is on screen. If it is it transitions the actual full size image onto the screen - else the image remains unrendered and you make one less request.
 
+To run:
+
 - npm install
 - npm start
