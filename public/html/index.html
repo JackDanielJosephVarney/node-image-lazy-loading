@@ -25,7 +25,12 @@
         .img-loaded {
             filter: blur(0px);
             opacity: 1;
-            transition: all 1s;
+            transition: all 0.3s;
+        }
+
+        .img-initially-onscreen {
+            filter: blur(0px);
+            opacity: 1;
         }
 
         .image-container {
@@ -55,6 +60,8 @@
     </div>
 </body>
 <script>
+    let initialLoad = true;
+
     const observerCB = (entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -63,11 +70,16 @@
                 if (el.src.indexOf('base64') >= 0) {
                     const src = el.getAttribute('data-src');
                     el.src = src;
-                    el.onload = () => el.classList.add('img-loaded');
+                    const className = initialLoad
+                        ? 'img-initially-onscreen'
+                        : 'img-loaded'
+                    el.onload = () => el.classList.add(className);
                     observer.unobserve(el);
                 }
             }
         });
+
+        initialLoad = false;
     };
 
     const observer = new IntersectionObserver(observerCB, {
