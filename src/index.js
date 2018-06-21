@@ -1,5 +1,3 @@
-console.clear();
-
 const fs = require('fs');
 const path = require('path');
 const gm = require('gm').subClass({ imageMagick: true });
