@@ -1,6 +1,6 @@
 # Lazy loading images with node.js
 
-You'll need to install [GraphicsMagick](http://www.graphicsmagick.org/) and [ImageMagick](http://www.imagemagick.org) to run this app - it'll run best on Chrome, it wont run at all on Safari.
+You'll need to install [GraphicsMagick](http://www.graphicsmagick.org/) and [ImageMagick](http://www.imagemagick.org) to run this app - it'll run best on Chrome, it wont run properly on Safari, as it doesnt support the Intersection API.
 
 The app scans and html file for img tags and replaces their src attributes with 3 x 3 base64 encoded images - meaning there is only one request made on the apps initial load.
 
