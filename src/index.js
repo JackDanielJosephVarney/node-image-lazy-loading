@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const gm = require('gm').subClass({ imageMagick: true });
-const JSDOM = require('jsdom').JSDOM
+const JSDOM = require('jsdom').JSDOM;
 const express = require('express');
 const app = express();
 
