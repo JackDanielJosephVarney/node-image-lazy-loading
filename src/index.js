@@ -5,7 +5,7 @@ const JSDOM = require('jsdom').JSDOM;
 const express = require('express');
 const app = express();
 
-app.use(express.static(path.join(__dirname, '..', 'public')))
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.get('/', (req, res) => {
     fs.readFile(path.join(__dirname, '..', 'public', 'html', 'index.html'), (err, buffer) => {
